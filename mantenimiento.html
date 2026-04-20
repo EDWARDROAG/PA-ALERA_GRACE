@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pañalera Grace — En mantenimiento</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="config.js"></script>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('pañalera-theme');
+        if (t === 'home') t = 'nino';
+        if (t !== 'nino' && t !== 'nina') t = 'nino';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'nino');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+<noscript>
+  <div class="noscript-banner" role="alert">
+    Para usar el acceso directo a WhatsApp, activá JavaScript. El mensaje de mantenimiento sigue visible.
+  </div>
+</noscript>
+
+<div class="bg-clouds" aria-hidden="true"></div>
+
+<header class="header header-baby">
+  <a href="index.html" class="logo-mark" aria-label="Inicio Pañalera Grace">
+    <img src="images/logo-marca.png" alt="" class="logo-img" width="112" height="112" decoding="async" onerror="this.onerror=null;this.src='favicon.svg';">
+  </a>
+
+  <a href="index.html" class="sections-menu-toggle sections-menu-toggle--header-mobile" aria-label="Inicio: menú de secciones">
+    <span class="sections-menu-toggle__icon" aria-hidden="true">☰</span>
+    <span class="sections-menu-toggle__text">Secciones</span>
+  </a>
+
+  <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-main">☰</button>
+
+  <nav id="nav-main" class="nav header-bar" aria-label="Navegación principal">
+    <div class="header-bar-side header-bar-side--start">
+      <a href="index.html" class="sections-menu-toggle sections-menu-toggle--in-bar" aria-label="Inicio: menú de secciones">
+        <span class="sections-menu-toggle__icon" aria-hidden="true">☰</span>
+        <span class="sections-menu-toggle__text">Secciones</span>
+      </a>
+      <a href="index.html" class="header-bar-cta">Inicio</a>
+      <a href="index.html#nosotros" class="header-bar-cta">Quiénes somos</a>
+    </div>
+    <div class="header-bar-side header-bar-side--end">
+      <a href="index.html#redes-sociales" class="header-bar-cta">Redes</a>
+      <a href="index.html#contacto" class="header-bar-cta">Contacto</a>
+    </div>
+  </nav>
+</header>
+
+<!-- Sección: franja modo tienda (Niño / Niña) -->
+<div class="page-theme-strip" role="presentation">
+  <div class="theme-toggle theme-toggle--bar" role="group" aria-label="Modo tienda: niño o niña">
+    <button type="button" class="theme-btn" id="btn-mod-nino" data-theme-btn="nino" aria-pressed="true">
+      <span class="theme-btn-text">Niño</span>
+      <span class="theme-btn-media" aria-hidden="true">
+        <img src="images/illustrations/nino-1.png" alt="" class="theme-btn-illu" width="80" height="48" decoding="async">
+      </span>
+    </button>
+    <button type="button" class="theme-btn" id="btn-mod-nina" data-theme-btn="nina" aria-pressed="false">
+      <span class="theme-btn-text">Niña</span>
+      <span class="theme-btn-media" aria-hidden="true">
+        <img src="images/illustrations/nina-1.png" alt="" class="theme-btn-illu" width="80" height="48" decoding="async">
+      </span>
+    </button>
+  </div>
+</div>
+
+<section class="maintenance-section">
+  <div class="maintenance-container">
+    <div class="maintenance-image">
+      <img class="illo-cutout maintenance-cutout" src="images/illustrations/ambos-2.png" alt="" width="280" height="200" decoding="async">
+    </div>
+    <div class="maintenance-text">
+      <h1>Volvemos muy pronto</h1>
+      <p>Estamos mejorando la tienda para cuidarte mejor a ti y a tu bebé.</p>
+      <p class="maintenance-note">📌 El botón usa el número configurado en <code>config.js</code> → <strong>empresa.whatsapp</strong>.</p>
+      <a href="#" class="maintenance-btn maintenance-btn--spaced" data-wa-general>
+        Contáctanos por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<a href="#" class="whatsapp-float" data-wa-general aria-label="WhatsApp">
+  <span class="whatsapp-ico" aria-hidden="true"></span>
+  <span class="whatsapp-tooltip">¿Necesitas algo urgente?</span>
+</a>
+
+<script src="js/landing.js"></script>
+<script>
+  (function () {
+    var btn = document.getElementById('nav-toggle');
+    var nav = document.getElementById('nav-main');
+    if (!btn || !nav) return;
+    btn.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
+</script>
+</body>
+</html>

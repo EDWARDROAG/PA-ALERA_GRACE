@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pañalera Grace: regalos baby shower, pañales, pañalera y más. Modo niño o niña y compra por WhatsApp.">
+  <meta property="og:title" content="Pañalera Grace — Todo para tu bebé">
+  <meta property="og:description" content="Regalos baby shower, pañales, pañalera y accesorios. Modo niño o niña y pedidos por WhatsApp.">
+  <meta property="og:image" content="images/logo-marca.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Pañalera Grace — Todo para tu bebé</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="config.js"></script>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('pañalera-theme');
+        if (t === 'home') t = 'nino';
+        if (t !== 'nino' && t !== 'nina') t = 'nino';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'nino');
+      }
+    })();
+  </script>
+</head>
+<body class="page-home page-home-shell">
+
+<noscript>
+  <div class="noscript-banner" role="alert">
+    Para ver todo el contenido de Pañalera Grace (paneles, catálogo integrado y filtros Niño/Niña), activá JavaScript en el navegador.
+    Podés ir directo al <a href="#catalogo">catálogo</a> y a <a href="bonos.html">promociones</a>.
+  </div>
+</noscript>
+
+<div class="bg-clouds" aria-hidden="true"></div>
+
+<header class="header header-baby">
+  <a href="index.html" class="logo-mark" aria-label="Inicio Pañalera Grace">
+    <img src="logos/logo.png" alt="" class="logo-img" width="150" height="150" decoding="async" onerror="this.onerror=null;this.src='favicon.svg';">
+  </a>
+
+  <button
+    type="button"
+    class="sections-menu-toggle sections-menu-toggle--header-mobile"
+    data-sections-toggle
+    aria-expanded="false"
+    aria-controls="app-sidebar"
+    aria-haspopup="true"
+  >
+    <span class="sections-menu-toggle__icon" aria-hidden="true">☰</span>
+    <span class="sections-menu-toggle__text">Secciones</span>
+  </button>
+
+  <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-main">☰</button>
+
+  <nav id="nav-main" class="nav header-bar" aria-label="Navegación principal">
+    <div class="header-bar-side header-bar-side--start">
+      <button
+        type="button"
+        class="sections-menu-toggle sections-menu-toggle--in-bar"
+        data-sections-toggle
+        aria-expanded="false"
+        aria-controls="app-sidebar"
+        aria-haspopup="true"
+      >
+        <span class="sections-menu-toggle__icon" aria-hidden="true">☰</span>
+        <span class="sections-menu-toggle__text">Secciones</span>
+      </button>
+      <button type="button" class="header-bar-cta" data-open-panel="panel-inicio">Inicio</button>
+      <button type="button" class="header-bar-cta" data-open-panel="panel-nosotros">Quiénes somos</button>
+    </div>
+    <div class="header-bar-side header-bar-side--end">
+      <button type="button" class="header-bar-cta" data-open-panel="panel-redes">Redes</button>
+      <button type="button" class="header-bar-cta" data-open-panel="panel-contacto">Contacto</button>
+    </div>
+  </nav>
+</header>
+
+<div class="page-theme-strip" role="presentation">
+  <div class="theme-toggle theme-toggle--bar" role="group" aria-label="Modo tienda: niño o niña">
+    <button type="button" class="theme-btn" id="btn-mod-nino" data-theme-btn="nino" aria-pressed="true">
+      <span class="theme-btn-text">Niño</span>
+      <span class="theme-btn-media" aria-hidden="true">
+        <img src="images/illustrations/nino-1.png" alt="" class="theme-btn-illu" width="80" height="48" decoding="async">
+      </span>
+    </button>
+    <button type="button" class="theme-btn" id="btn-mod-nina" data-theme-btn="nina" aria-pressed="false">
+      <span class="theme-btn-text">Niña</span>
+      <span class="theme-btn-media" aria-hidden="true">
+        <img src="images/illustrations/nina-4.png" alt="" class="theme-btn-illu" width="80" height="48" decoding="async">
+      </span>
+    </button>
+  </div>
+</div>
+
+<main id="inicio" class="main-app">
+  <div class="app-shell" id="app-shell">
+    <div class="sections-menu-backdrop" id="sections-backdrop" hidden></div>
+    <div class="app-layout">
+      <aside class="app-sidebar" id="app-sidebar" aria-label="Menú de secciones" aria-hidden="true">
+        <p class="app-sidebar-title">Secciones</p>
+        <nav class="app-sidebar-nav" id="sidebar-sections">
+          <button type="button" class="sidebar-btn sidebar-btn--with-bg sidebar-btn--drawer-catalogo" data-open-panel="panel-catalogo" aria-pressed="false"><span class="sidebar-btn-bg" aria-hidden="true"></span><span class="sidebar-btn-label">Catálogo</span></button>
+          <button type="button" class="sidebar-btn sidebar-btn--with-bg sidebar-btn--baby" data-open-panel="panel-baby" aria-pressed="false"><span class="sidebar-btn-bg" aria-hidden="true"></span><span class="sidebar-btn-label">Baby shower</span></button>
+          <a href="bonos.html" class="sidebar-btn sidebar-btn--with-bg sidebar-btn--drawer-promo"><span class="sidebar-btn-bg" aria-hidden="true"></span><span class="sidebar-btn-label">Promociones</span></a>
+        </nav>
+      </aside>
+
+      <div class="app-stage">
+        <div class="app-panels" aria-live="polite" aria-atomic="false">
+          <div class="app-panels-loading" role="status">Cargando secciones...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer footer-baby">
+  <div class="footer-mascots" aria-hidden="true">
+    <figure class="footer-mascot footer-mascot--nino">
+      <img src="images/illustrations/footer-ni%C3%B1o.png" alt="" width="220" height="160" loading="lazy" decoding="async">
+    </figure>
+    <figure class="footer-mascot footer-mascot--nina">
+      <img src="images/illustrations/footer%20ni%C3%B1a.png" alt="" width="220" height="160" loading="lazy" decoding="async">
+    </figure>
+  </div>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Pañalera Grace</h3>
+      <p>Regalos baby shower, pañales, pañalera y mimos para bebé · modo inicio (todo), niño o niña.</p>
+    </div>
+    <div class="footer-column">
+      <h3>Enlaces</h3>
+      <ul class="footer-menu">
+        <li><button type="button" class="footer-panel-link" data-open-panel="panel-catalogo">Catálogo</button></li>
+        <li><button type="button" class="footer-panel-link" data-open-panel="panel-baby">Baby shower</button></li>
+        <li><a href="bonos.html">Promociones</a></li>
+        <li><button type="button" class="footer-panel-link" data-open-panel="panel-nosotros">Quiénes somos</button></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Aviso</h3>
+      <p class="footer-disclaimer">Precios referenciales. Fotos de producto en <code>images/productos/</code>. Ilustraciones en <code>images/illustrations/</code> (nino-*, nina-*, ambos-*, titulo). Logo: <code>images/logo-marca.png</code>.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> Pañalera Grace — Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<a href="#" class="whatsapp-float" id="whatsapp-float" data-wa-general aria-label="Abrir WhatsApp">
+  <span class="whatsapp-ico" aria-hidden="true"></span>
+  <span class="whatsapp-tooltip">¿Te ayudamos con tu pedido?</span>
+</a>
+
+<script>window.__PANALERA_DEFER_INIT__ = true;</script>
+<script src="js/loader.js"></script>
+<script src="js/whatsapp.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/home-panels.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

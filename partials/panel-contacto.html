@@ -1,0 +1,40 @@
+<section class="section section-contact" id="contacto">
+  <div class="contact-grid">
+    <div>
+      <h2>Contacto</h2>
+      <p class="contact-intro">¿Dudas sobre tallas o envíos? Escríbenos cuando quieras.</p>
+      <ul class="contact-block" data-editable-block>
+        <li><span aria-hidden="true">📍</span> <span data-contact-field="direccion"><strong>Calle 57B Sur #64-32, barrio Villa del Río</strong></span></li>
+        <li><span aria-hidden="true">📱</span> <span data-contact-field="telefono"><strong>300 123 4567</strong></span></li>
+        <li><span aria-hidden="true">✉️</span> <span data-contact-field="email"><strong>info@panaleragrace.com</strong></span></li>
+      </ul>
+      <div class="contact-map" aria-label="Ubicación aproximada en mapa">
+        <iframe
+          class="contact-map__iframe"
+          title="Mapa — dirección Pañalera Grace"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Calle+57B+Sur+%2364-32,+barrio+Villa+del+R%C3%ADo&amp;hl=es&amp;z=15&amp;output=embed"></iframe>
+      </div>
+      <div class="contact-illo" aria-hidden="true">
+        <img class="illo-cutout" src="images/illustrations/ambos-3.png" alt="" width="240" height="200" loading="lazy" decoding="async">
+      </div>
+    </div>
+    <form class="contact-form" id="formulario-contacto" novalidate>
+      <label>Nombre
+        <input type="text" name="nombre" required placeholder="Tu nombre" autocomplete="name">
+      </label>
+      <label>Teléfono
+        <input type="tel" name="telefono" required placeholder="Ej: 300 123 4567" autocomplete="tel">
+      </label>
+      <label>Producto de interés
+        <input type="text" name="producto" placeholder="Ej: Combo Baby Shower deluxe">
+      </label>
+      <label>Mensaje
+        <textarea name="mensaje" rows="4" placeholder="Cuéntanos qué necesitas"></textarea>
+      </label>
+      <button type="submit" class="btn btn-primary btn-block">Solicitar información</button>
+      <p class="form-note">Al enviar, se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+    </form>
+  </div>
+</section>
